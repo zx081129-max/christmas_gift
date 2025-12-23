@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>🎄 圣诞夜，有陌生人给你准备了一份祝福</title>
+  <meta name="description" content="世界各地的祝福，正在被悄悄送出。" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Christmas Wishes" />
+  <meta property="og:title" content="🎄 圣诞夜，有陌生人给你准备了一份祝福" />
+  <meta property="og:description" content="世界各地的祝福，正在被悄悄送出。" />
+  <meta property="og:url" content="https://example.com/" />
+  <meta property="og:image" content="https://example.com/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="🎄 圣诞夜，有陌生人给你准备了一份祝福" />
+  <meta name="twitter:description" content="世界各地的祝福，正在被悄悄送出。" />
+  <meta name="twitter:image" content="https://example.com/og-image.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/base.css" />
+</head>
+<body class="send">
+  <canvas id="air-particles" aria-hidden="true"></canvas>
+  <div id="slidesRoot">
+    <section class="panel slide page-1" id="panel-1">
+      <div class="slide-inner">
+        <div class="content page-1-content">
+          <p id="wish-count" class="stat-line">已经有 <span class="stat-count">...</span> 句祝福被写下</p>
+
+      <h1 class="hero-title">
+        给一个陌生人<br />
+        写一句<span class="hero-highlight">圣诞祝福</span>。
+      </h1>
+
+          <div class="countdown-block">
+            <div class="countdown-label">距离圣诞夜还有</div>
+            <div id="countdown-value" class="countdown-value">...</div>
+          </div>
+
+          <p class="hero-copy">
+            这是一个为圣诞节而存在的网站。<br />
+            世界各地的人，正在把祝福写在这里。<br />
+            你也可以留下其中一句。
+          </p>
+        </div>
+      </div>
+      <div class="scroll-indicator" aria-hidden="true"></div>
+    </section>
+
+    <section class="panel slide page-2 intro-slide" id="panel-2">
+      <div class="slide-inner">
+        <div class="content">
+          <p class="slide-text page-2-text">
+            这个圣诞节，<br />
+            每个人都可以当一次圣诞老人。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel slide page-3 intro-slide" id="panel-3">
+      <div class="slide-inner">
+        <div class="content">
+          <p class="slide-text page-3-text">
+            给一个陌生人，<br />
+            留下一句祝福。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel slide page-4 intro-slide" id="panel-4">
+      <div class="slide-inner">
+        <div class="content">
+          <p class="slide-text page-4-text">
+            在<span class="page-4-highlight">圣诞夜</span>，<br />
+            你会收到来自世界各地的祝福。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel slide page-5" id="panel-5">
+      <div class="slide-inner">
+        <div class="content page-5-content" id="page-5-content">
+          <div id="page-5-editing" class="page-5-state page-5-editing">
+            <form id="wish-form" class="page-5-form" novalidate>
+              <textarea
+                id="wish-message"
+                name="message"
+                class="page-5-textarea"
+                placeholder="写下一句你想送给陌生人的圣诞祝福"
+              ></textarea>
+              <div id="page-5-counter" class="page-5-counter">0 / 30</div>
+              <input
+                id="wish-name"
+                type="text"
+                name="name"
+                class="page-5-input"
+                placeholder="你的名字（可选）"
+              />
+              <select id="wish-country" name="country" class="page-5-select" required>
+                <option value="" disabled selected>你所在的国家 / 地区</option>
+              </select>
+              <button id="wish-submit" class="page-5-submit" type="submit">把祝福留在这里</button>
+              <p id="page-5-error" class="page-5-error" role="status" aria-live="polite"></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="panel slide page-6" id="panel-6">
+      <div class="slide-inner">
+        <div class="content page-6-content">
+          <div class="page-6-zone page-6-top page-6-block" style="--delay: 120ms;">
+            <p class="page-6-lead">
+              这是一个只在圣诞节前后存在的祝福网站。
+            </p>
+          </div>
+
+          <div class="page-6-zone page-6-middle">
+            <div class="page-6-card page-6-block" style="--delay: 200ms;">
+              <div class="page-6-card-title">匿名保存</div>
+              <p class="page-6-card-body">
+                所有祝福匿名保存，不展示任何个人关系。
+              </p>
+            </div>
+            <div class="page-6-card page-6-block" style="--delay: 260ms;">
+              <div class="page-6-card-title">只为节日</div>
+              <p class="page-6-card-body">
+                祝福只在圣诞夜送达，不做长期运营。
+              </p>
+            </div>
+            <div class="page-6-card page-6-block" style="--delay: 320ms;">
+              <div class="page-6-card-title">不做商业</div>
+              <p class="page-6-card-body">
+                不含广告、排名或商业用途。
+              </p>
+            </div>
+          </div>
+
+          <div class="page-6-zone page-6-bottom">
+            <div class="page-6-block page-6-share-block" style="--delay: 380ms;">
+              <div class="page-6-caption">把这个网站分享给别人</div>
+              <div class="page-6-share-list">
+                <a class="page-6-share-link" data-share="wechat" href="#" aria-label="微信">
+                  <img class="page-6-share-icon" src="https://cdn.simpleicons.org/wechat/ffffff" alt="" />
+                </a>
+                <a class="page-6-share-link" data-share="qq" href="#" aria-label="QQ">
+                  <img class="page-6-share-icon" src="https://cdn.simpleicons.org/qq/ffffff" alt="" />
+                </a>
+                <a class="page-6-share-link" data-share="douyin" href="#" aria-label="抖音">
+                  <img class="page-6-share-icon" src="https://cdn.simpleicons.org/tiktok/ffffff" alt="" />
+                </a>
+                <a class="page-6-share-link" data-share="xiaohongshu" href="#" aria-label="小红书">
+                  <img class="page-6-share-icon" src="https://cdn.simpleicons.org/xiaohongshu/ffffff" alt="" />
+                </a>
+                <a class="page-6-share-link" data-share="x" href="#" aria-label="X">
+                  <img class="page-6-share-icon" src="https://cdn.simpleicons.org/x/ffffff" alt="" />
+                </a>
+                <a class="page-6-share-link" data-share="instagram" href="#" aria-label="Instagram">
+                  <img class="page-6-share-icon" src="https://cdn.simpleicons.org/instagram/ffffff" alt="" />
+                </a>
+                <a class="page-6-share-link" data-share="facebook" href="#" aria-label="Facebook">
+                  <img class="page-6-share-icon" src="https://cdn.simpleicons.org/facebook/ffffff" alt="" />
+                </a>
+              </div>
+            </div>
+
+            <div class="page-6-block page-6-author" style="--delay: 440ms;">
+              <div class="page-6-caption">作者 / 发起者</div>
+              <p class="page-6-body page-6-author-text">
+                Yin Wen<br />
+                Brian<br />
+                Ruishen
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="/js/phase.js"></script>
+  <script src="/js/send.js"></script>
+  <script src="/js/send-ui.js"></script>
+</body>
+</html>
